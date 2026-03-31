@@ -371,7 +371,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
       <div class="pricing-card"><div class="pricing-name">Enterprise</div><div class="pricing-price"><sup>₹</sup>24,999<sub>/mo</sub></div><div class="pricing-desc">For large construction companies</div><ul class="pricing-features"><li><span class="check">✓</span>Unlimited Projects</li><li><span class="check">✓</span>Pro Engineer AI</li><li><span class="check">✓</span>Custom Dashboards</li><li><span class="check">✓</span>Unlimited Members</li><li><span class="check">✓</span>White Label Option</li><li><span class="check">✓</span>Dedicated Support</li></ul><button class="btn-outline" onclick="showPage('signup')">Contact Sales</button></div>
     </div>
   </div>
-  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo">⚡ Build<span>IQ</span></div><p>India's most advanced AI-powered construction CRM. Trusted by 12,000+ professionals.</p></div><div class="footer-col"><h4>Product</h4><a onclick="showPage('features')">Features</a><a onclick="showPage('pricing')">Pricing</a><a onclick="goToDash()">Dashboard</a></div><div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About Us</a><a>Careers</a><a>Blog</a></div><div class="footer-col"><h4>Support</h4><a>Help Center</a><a>API Docs</a><a>Contact Us</a><a>Privacy Policy</a></div></div><div class="footer-bottom"><span>© 2025 BuildIQ Technologies Pvt. Ltd.</span><span>🇮🇳 Bangalore, India | contact@buildiq.in</span></div></footer>
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo">⚡ Build<span>IQ</span></div><p>India's most advanced AI-powered construction CRM. Trusted by 12,000+ professionals.</p></div><div class="footer-col"><h4>Product</h4><a onclick="showPage('features')">Features</a><a onclick="showPage('pricing')">Pricing</a><a onclick="goToDash()">Dashboard</a></div><div class="footer-col"><h4>Company</h4><a onclick="showPage('about')">About Us</a><a>Careers</a><a>Blog</a></div><div class="footer-col"><h4>Support</h4><a>Help Center</a><a>API Docs</a><a>Contact Us</a><a>Privacy Policy</a></div></div><div class="footer-bottom"><span>© 2025 BuildIQ Technologies Pvt. Ltd.</span><span>🇮🇳 Bangalore, India | <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0c3cfced4c1c3d4e0c2d5c9ccc4c9d18ec9ce">[email&#160;protected]</a></span></div></footer>
 </div>
 
 <!-- ======================== FEATURES ======================== -->
@@ -421,7 +421,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
       <div class="team-card"><div class="team-avatar">NK</div><div style="font-weight:700;margin-bottom:4px;">Neha Kulkarni</div><div style="font-size:13px;color:var(--text3);">VP Product</div><div style="font-size:12px;color:var(--text3);margin-top:8px;">CEPT University, 8 yrs product</div></div>
     </div>
   </div>
-  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo">⚡ Build<span>IQ</span></div><p>Leading AI construction CRM.</p></div><div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('features')">Features</a></div><div class="footer-col"><h4>Company</h4><a>Careers</a><a>Blog</a></div><div class="footer-col"><h4>Contact</h4><a>contact@buildiq.in</a></div></div><div class="footer-bottom"><span>© 2025 BuildIQ Technologies Pvt. Ltd.</span></div></footer>
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo">⚡ Build<span>IQ</span></div><p>Leading AI construction CRM.</p></div><div class="footer-col"><h4>Product</h4><a onclick="showPage('home')">Home</a><a onclick="showPage('features')">Features</a></div><div class="footer-col"><h4>Company</h4><a>Careers</a><a>Blog</a></div><div class="footer-col"><h4>Contact</h4><a><span class="__cf_email__" data-cfemail="e5868a8b91848691a587908c89818c94cb8c8b">[email&#160;protected]</span></a></div></div><div class="footer-bottom"><span>© 2025 BuildIQ Technologies Pvt. Ltd.</span></div></footer>
 </div>
 
 <!-- ======================== LOGIN ======================== -->
@@ -718,7 +718,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
 <!-- VOICE BUTTON -->
 <button class="voice-btn" id="voice-btn" title="Voice Assistant">🎤</button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ═══════════════════════════════════════════
 //  STATE
 // ═══════════════════════════════════════════
@@ -890,7 +890,7 @@ async function loadDashboard() {
 
     const u = currentUser;
     const hour = new Date().getHours();
-    const greeting = hour<12?'Good morning':'hour<18?'Good afternoon':'Good evening';
+    const greeting = hour<12?'Good morning':hour<18?'Good afternoon':'Good evening';
     
     document.getElementById('proj-count-badge').textContent = stats.total_projects;
 
@@ -1324,11 +1324,13 @@ document.getElementById('voice-btn').addEventListener('click', function() {
   }
 });
 
-// ═══════════════════════════════════════════
+// ===========================================
 //  INIT
-// ═══════════════════════════════════════════
+// ===========================================
 updateNavForAuth();
-if (authToken && window.location.hash === '#dashboard') { showPage('dashboard'); loadDashboard(); }
+if (authToken) {
+  document.getElementById('nav-dash').style.display = 'block';
+}
 </script>
 </body>
 </html>
